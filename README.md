@@ -1,24 +1,115 @@
 # 🌍 Global Market Stress Analysis (2020–2026)
 
-This project studies how major equity markets behaved under repeated stress episodes from 2020 to 2026. The emphasis is on **transparent, interpretable quantitative analysis** rather than trading strategies or black-box machine learning.
-
-The core objective is **diagnosis, not prediction** — understanding how risk evolves, how crises propagate, and how markets behave when equilibrium assumptions break down.
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)  
+![Pandas](https://img.shields.io/badge/pandas-data_analysis-green)  
+![NumPy](https://img.shields.io/badge/numpy-numerical_computing-blueviolet)  
+![Matplotlib](https://img.shields.io/badge/matplotlib-visualization-orange)  
+![Jupyter](https://img.shields.io/badge/jupyter-notebook-red)  
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 ---
 
-## 📌 Markets Analyzed
+## 📘 Overview
 
-- **NIFTY 50 (India)**
-- **S&P 500 (United States)**
+This project presents a structured empirical investigation of **global equity market stress** between **2020 and 2026**, a period marked by:
+
+- The COVID-19 financial crisis  
+- Unprecedented monetary tightening  
+- Global inflation shocks  
+- Geopolitical instability  
+- Energy market disruptions  
+
+Rather than developing trading strategies or black-box predictive models, the study adopts a **transparent, interpretable, and academically grounded framework** rooted in empirical finance and quantitative risk analysis.
+
+The central objective is to document how **risk, volatility, and market fragility evolve across major equity markets during systemic stress**, and to assess whether these dynamics are synchronized or market-specific.
+
+This project is designed to be:
+
+- Reproducible  
+- Statistically rigorous  
+- Visually interpretable  
+- Appropriate for academic and professional portfolios  
+
+---
+
+## 🎯 Research Questions
+
+The analysis is organized around three core research questions:
+
+1. **How did risk and performance evolve across major equity markets during a crisis-heavy period?**  
+   - Were returns systematically penalized by volatility?  
+   - Did some markets demonstrate greater resilience?
+
+2. **Do global equity markets exhibit volatility clustering and synchronized turbulence?**  
+   - Are stress episodes localized or systemic?  
+   - Do volatility regimes persist over time?
+
+3. **How did a unit of invested wealth evolve under repeated macro shocks?**  
+   - Were recovery paths smooth or highly path-dependent?  
+   - Did markets reconverge after crises?
+
+These questions frame the empirical investigation that follows.
+
+---
+
+## 📊 Data
+
+Three benchmark equity indices are analyzed:
+
+- **NIFTY 50 (India)**  
+- **S&P 500 (United States)**  
 - **FTSE 100 (United Kingdom)**  
 
-Daily historical prices from 2020–2026 are used. All computations are reproducible in Python.
+The dataset consists of **daily historical prices from January 2020 to early 2026**, sourced from publicly available market data.
+
+All computations are implemented in Python using:
+
+- `pandas` for data processing  
+- `numpy` for numerical computation  
+- `matplotlib` for professional visualization  
+- `jupyter` for reproducible analysis  
 
 ---
 
-# 📊 KEY FINDINGS (WITH PROPERLY TAGGED IMAGES)
+## 🧮 Methodology
 
-Each finding below is explicitly tied to one figure from your repository.
+The analysis proceeds in four structured stages:
+
+### **1. Data Cleaning and Alignment**
+- Daily prices were cleaned and aligned to a common trading calendar.  
+- Missing values were handled systematically to ensure comparability across markets.
+
+### **2. Risk and Performance Measurement**
+From the aligned price series, the following were computed:
+
+- **Daily returns**  
+- **30-day rolling annualized volatility**  
+- **Maximum drawdowns**  
+- **Sharpe ratios** (risk-adjusted returns)  
+
+These metrics provide a comprehensive view of market risk and efficiency.
+
+### **3. Turbulence Detection**
+A data-driven turbulence indicator was constructed based on extreme volatility episodes. This allows identification of:
+
+- Crisis regimes  
+- Periods of systemic stress  
+- Cross-market synchronization of shocks  
+
+### **4. Comparative Market Analysis**
+Markets were compared along three dimensions:
+
+- **Risk (volatility and drawdowns)**  
+- **Performance (cumulative wealth paths)**  
+- **Stress alignment (turbulence timing and clustering)**  
+
+This multi-layered approach ensures that conclusions are not driven by a single metric.
+
+---
+
+# 📊 Evidence & Findings (with Figures)
+
+Each conclusion below is directly supported by one of your core visualizations.
 
 ---
 
@@ -26,26 +117,21 @@ Each finding below is explicitly tied to one figure from your repository.
 
 ![Market Performance Snapshot](outputs/summary_dashboard_clean.png)
 
-This figure summarizes four key metrics across markets:
+This figure summarizes key risk and performance metrics across markets.
 
-- Mean return  
-- Mean volatility  
-- Maximum drawdown  
-- Sharpe ratio  
+### Empirical Findings
 
-### What this image shows
-
-- **All three markets show negative mean returns** over 2020–2026, confirming that this is a stress-dominated period rather than a normal growth cycle.  
-- **S&P 500 has the highest volatility (~0.18)** but still delivers poor risk-adjusted performance (Sharpe ≈ −0.60).  
-- **NIFTY 50 is the most fragile in risk-adjusted terms** (Sharpe ≈ −0.74).  
-- **FTSE 100 performs relatively better** (Sharpe ≈ −0.22), indicating smoother behavior during global turmoil.
+- All three markets exhibit **negative average returns over 2020–2026**, confirming that this period is dominated by crisis dynamics rather than steady growth.  
+- **S&P 500 shows the highest volatility**, yet delivers poor risk-adjusted performance.  
+- **NIFTY 50 appears most fragile in risk-adjusted terms**, indicating that investors were not compensated for the risk taken.  
+- **FTSE 100 performs relatively better**, suggesting greater resilience during systemic turmoil.
 
 ### Interpretation
 
-This chart reframes the entire study:  
-> 2020–2026 should be treated as a *stress regime*, not a normal market cycle.
+This figure reframes the entire study:  
+> 2020–2026 should be interpreted as a *stress regime*, not a normal market cycle.
 
-Traditional performance evaluation (Sharpe ratio) looks poor everywhere because risk dominated returns.
+Traditional performance metrics such as the Sharpe ratio break down under such conditions.
 
 ---
 
@@ -53,23 +139,19 @@ Traditional performance evaluation (Sharpe ratio) looks poor everywhere because 
 
 ![30-Day Volatility Regimes](outputs/volatility_regimes_30d_high_contrast.png)
 
-This visualization overlays:
+This visualization overlays rolling volatility with shaded turbulent periods.
 
-- 30-day median volatility  
-- Interquartile (IQR) bands  
-- Highlighted turbulent periods  
+### Empirical Findings
 
-### What we learn
+- **Volatility clusters over time** — once markets enter high-volatility states, they tend to remain elevated for extended periods.  
+- Major turbulence episodes align across all three markets, particularly during:
+  - Early 2020 (COVID-19 crash)  
+  - 2022 (inflation and rate hikes)  
+  - Late 2024 (renewed global drawdowns)
 
-- **Volatility clusters in time** — once markets become turbulent, they remain turbulent for extended periods.  
-- Major spikes align across all three markets around:
-  - Early 2020 (COVID crash)  
-  - 2022 (inflation + rate hikes)  
-  - Late 2024 (renewed drawdowns)
+### Interpretation
 
-### Key takeaway
-
-Markets behave as a **connected system under stress**, supporting a classic empirical finance result:
+Markets behave as a **connected global system under stress**, supporting a core stylized fact of financial economics:
 
 > *Volatility is persistent and contagious across markets.*
 
@@ -79,23 +161,23 @@ Markets behave as a **connected system under stress**, supporting a classic empi
 
 ![Rolling Volatility](outputs/rolling_volatility.png)
 
-This chart plots 30-day rolling annualized volatility for all three indices together.
+This chart compares rolling volatility across all three indices.
 
-### What it shows
+### Empirical Findings
 
-- **S&P 500 consistently exhibits the highest volatility.**  
-- **FTSE 100 is the most stable**, rarely reaching extreme spikes.  
-- **NIFTY 50 sits in between**, but experiences sharper jumps during crises.
+- **S&P 500 consistently exhibits the highest volatility**, reflecting sensitivity to macroeconomic shocks.  
+- **FTSE 100 is structurally more stable**, with fewer extreme volatility spikes.  
+- **NIFTY 50 lies in between**, showing moderate risk but sharper jumps during crises.
 
-### Risk interpretation
+### Risk Interpretation
 
-If an institutional investor wanted:
+From a portfolio perspective:
 
-- Lower risk → **FTSE 100**  
-- Higher risk exposure → **S&P 500**  
-- Emerging market sensitivity → **NIFTY 50**
+- Lower risk exposure → **FTSE 100**  
+- Higher risk sensitivity → **S&P 500**  
+- Emerging market exposure → **NIFTY 50**
 
-This figure justifies those classifications quantitatively.
+This aligns with standard empirical characterizations of developed versus emerging markets.
 
 ---
 
@@ -103,75 +185,62 @@ This figure justifies those classifications quantitatively.
 
 ![Cumulative Performance](outputs/cumulative_performance.png)
 
-This plot tracks how ₹1 / $1 / £1 grows in each market from 2020 onward.
+This figure tracks how ₹1 / $1 / £1 evolves over time in each market.
 
-### What it reveals
+### Empirical Findings
 
-- All three markets suffered deep drawdowns in 2020.  
-- Recovery is **jagged, uneven, and non-linear**, not smooth exponential growth.  
-- Wealth paths **diverge sharply during crises** and only gradually reconverge.
+- All markets experienced deep drawdowns in 2020.  
+- Recovery paths are **highly uneven and non-linear**, rather than smooth exponential growth.  
+- Wealth trajectories diverge sharply during crises and only slowly reconverge.
 
-### Core conclusion
+### Core Conclusion
 
 Market performance is **shock-driven rather than trend-driven**.
 
-This reinforces the central thesis of the project:
+This reinforces the project’s central thesis:
 
-> Markets are structurally fragile under stress, not self-correcting toward equilibrium.
-
----
-
-# 🧮 Methods (What you actually did)
-
-1. **Data Processing**
-   - Cleaned and aligned daily prices  
-   - Computed log returns  
-
-2. **Risk Estimation**
-   - 30-day rolling annualized volatility  
-   - Maximum drawdown  
-   - Sharpe ratio  
-
-3. **Stress Identification**
-   - Labeled turbulent periods based on elevated volatility  
-   - Visualized clustering and co-movement  
-
-4. **Comparative Analysis**
-   - Cross-market volatility comparison  
-   - Cumulative performance benchmarking  
+> Financial markets are structurally fragile under stress and do not behave like equilibrium systems.
 
 ---
 
-# 🎯 Why this project is strong for GitHub / MSc applications
+## 🎯 Contribution of the Project
 
-This project demonstrates:
+This study demonstrates:
 
-- Rigorous data cleaning  
-- Financial intuition  
+- Rigorous data handling  
+- Sound financial reasoning  
+- Clear statistical interpretation  
 - Professional visualization  
-- Interpretable quantitative methods  
-- Real-world risk framing  
+- Transparent methodology  
 
-It is appropriate for:
-- Data science portfolios  
-- Quant finance track records  
-- Master’s applications in Finance, Data Science, or Financial Mathematics  
+It is suitable for:
+
+- GitHub portfolios  
+- MSc Data Science applications  
+- Quantitative Finance track records  
+- Financial Mathematics programs  
 
 ---
 
-# 🚀 Optional Next Steps (if you expand later)
+## 🚀 Future Extensions
 
-You could extend this work with:
+Possible next steps include:
 
-- Cross-market volatility spillover analysis  
+- Cross-market volatility spillovers  
 - Lead–lag relationships between indices  
 - Regime-switching models  
-- Tail risk (CVaR) instead of volatility  
-- Stress contagion modeling  
+- Tail-risk analysis (CVaR)  
+- Contagion modeling  
 
 ---
 
 ## 📌 Reproducibility
 
-All results are fully reproducible using the provided notebooks and source code.
+All results are fully reproducible using the provided notebook and source code. Running the analysis from scratch will regenerate all figures in the `outputs/` directory.
+
+---
+
+## 👤 Author
+
+Independent quantitative research project combining finance, statistics, and data science to study global market stress.
 
