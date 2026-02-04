@@ -1,11 +1,7 @@
 # 🌍 Global Market Stress Analysis (2020–2026)
 
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)  
-![Pandas](https://img.shields.io/badge/pandas-data_analysis-green)  
-![NumPy](https://img.shields.io/badge/numpy-numerical_computing-blueviolet)  
-![Matplotlib](https://img.shields.io/badge/matplotlib-visualization-orange)  
-![Jupyter](https://img.shields.io/badge/jupyter-notebook-red)  
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
+![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg) ![pandas](https://img.shields.io/badge/pandas-data%20analysis-blue) ![numpy](https://img.shields.io/badge/numpy-numerical%20computing-purple) ![matplotlib](https://img.shields.io/badge/matplotlib-visualization-orange) ![Jupyter](https://img.shields.io/badge/jupyter-notebook-red) ![MIT License](https://img.shields.io/badge/license-MIT-lightgrey)
+
 
 ---
 
